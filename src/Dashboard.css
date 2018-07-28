@@ -1,0 +1,199 @@
+
+
+.Crm {
+  text-align: center;
+}
+
+.Crm-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.Crm-header {
+  background-color: #222;
+  height: 155px;
+  padding: 20px;
+  color: white;
+}
+
+.Crm-title {
+  font-size: 1.5em;
+}
+
+.Crm-subtitle {
+  margin: 0px;
+  position: relative;
+  bottom: 5px;
+}
+
+.Crm-subtitle a {
+  color: #fff;
+}
+
+.Crm-subtitle a:hover {
+  color: #82cbff;
+}
+
+.Crm-intro {
+  font-size: large;
+}
+
+@keyframes Crm-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.Add-person {
+  margin: 30px;
+}
+
+.top-nav {
+  text-align: right;
+}
+
+a {
+  color: #1295f3;
+}
+
+a:hover {
+  color: #222;
+}
+
+a:visited {
+  color: #222;
+}
+
+button {
+  padding: 15px 20px;
+  background-color: #fff;
+  font-weight: bolder;
+  font-size: 24px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  color: #1295f3;
+  border: 5px solid #1295f3;
+  margin: 0px 10px;
+}
+
+button:hover {
+  background-color: #1295f3;
+  color: #fff;
+}
+
+.logout-button {
+  border-color: #6f6f6f !important;
+  color: #6f6f6f;
+}
+
+.logout-button:hover {
+  background-color: #6f6f6f;
+}
+
+table {
+  width: 100%;
+}
+
+
+
+
+/*  MOBILE MEDIA QUERIES  */
+
+/*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+
+table {
+  width: 100%;
+}
+th {
+  padding: 10px;
+}
+
+tr {
+  padding: 10px;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    margin: 0 0 1rem 0;
+    padding: 10px;
+  }
+  tr:nth-child(odd) {
+    background: #b8def846;
+  }
+  td {
+    /* Behave  like a "row" */
+    border: none; 
+    border-bottom: none;
+    position: relative;
+    padding-left: 45%;
+    text-align: left;
+  }
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0;
+    left: 6px;
+    width: 35%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  /*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+    */
+    
+  td:before {
+    text-align: right;
+  }  
+  td:nth-of-type(1):before {
+    content: "Name:";
+    font-weight: bolder;
+  }
+  td:nth-of-type(2):before {
+    content: "Email:";
+    font-weight: bolder;
+  }
+  td:nth-of-type(3):before {
+    content: "Phone:";
+    font-weight: bolder;
+  }
+  td:nth-of-type(4):before {
+    content: "Created:";
+    font-weight: bolder;
+  }
+  td:nth-of-type(5):before {
+    content: "Updated:";
+    font-weight: bolder;
+  }
+  td:nth-of-type(6):before {
+    content: "Actions:";
+    font-weight: bolder;
+  }
+}
+
+@media only screen and (max-width: 463px) {
+  button {
+    display: block;
+    margin: 10px;
+    width: 100%;
+  } 
+}
